@@ -69,7 +69,8 @@
 						"language": "latex",
 						"scheme": "file"
 					}
-				]
+				],
+				"hsnips.hsnipsPath": "/root/.config/HyperSnips"
 			},
 			"extensions": [
 				"James-Yu.latex-workshop",
