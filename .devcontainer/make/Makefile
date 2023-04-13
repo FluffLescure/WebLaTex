@@ -17,7 +17,7 @@ intro :
 	@echo "The latex-utils directory path will be: ${utils_PATH}"; \
 	echo "The HyperSnips directory path will be: ${hsnips_PATH}"
 
-directories : 
+directories :
 	@if test -e ${utils_PATH} && test -e ${hsnips_PATH} && test -e ${utils_PATH}/common && test -e ${utils_PATH}/logos; then \
 		echo "Directories already exist"; \
 	else \
@@ -39,21 +39,21 @@ sources :
 
 ${utils_PATH}/common/%.tex: ./common/%.tex
 	@echo "Unpacking $< to $@"
-	@cp $< $@
+	@rsync -uq $< $@
 
-common: $(common_dest_files)
+common: $(common_dest_files) 
 	@echo "Files in ./common successfully unpacked"
 
 ${utils_PATH}/logos/%: ./logos/%
 	@echo "Unpacking $< to $@"
-	@cp $< $@
+	@rsync -uq $< $@
 
-logos :$(logos_dest_files)
-	@echo "Files in ./common successfully unpacked"
+logos :$(logos_dest_files) 
+	@echo "Files in ./logos successfully unpacked"
 
 snippets :
 	@echo "Unpacking latex.hsnips to ${hsnips_PATH}/latex.hsnips"; \
-	cp latex.hsnips ${hsnips_PATH}/latex.hsnips; \
+	rsync -uq latex.hsnips ${hsnips_PATH}/latex.hsnips; \
 	if [ $$? -ne 0 ]; then \
 		$(call error_exit, "\tError unpacking latex.hsnips"); \
 	else \
