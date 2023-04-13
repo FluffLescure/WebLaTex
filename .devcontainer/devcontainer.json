@@ -70,11 +70,13 @@
 						"scheme": "file"
 					}
 				],
-				"hsnips.hsnipsPath": "/root/.config/HyperSnips"
+				"hsnips.hsnipsPath": "/root/.config/HyperSnips",
+				"files.autoSaveDelay": 300000
 			},
 			"extensions": [
 				"James-Yu.latex-workshop",
 				"GitHub.copilot",
+				"draivin.hypersnips",
 				// Remove the line below if you do not want Live-Collaboration Feature
 				"ms-vsliveshare.vsliveshare",
 				// Uncomment the line below if you do not want LanguageTool Support
